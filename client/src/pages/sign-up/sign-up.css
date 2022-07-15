@@ -1,0 +1,10 @@
+.container {
+     width: 500px;
+     margin-top: 10%;
+}
+label{
+    padding-top: 8px;
+}
+a{
+     text-decoration: none;
+}
