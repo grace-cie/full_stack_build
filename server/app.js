@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 
 import authRoute from './routes/auth.js';
+import usersRoute from './routes/users.js';
 
 const app = express();
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(express.json()); // para ma send ang json file sa postMan nig request ðŸ
 
 //routes
 app.use('/server/auth', authRoute);
+app.use('/server/users', usersRoute);
 
 mongoose.connection.on('error', (err) => {
   console.log(err);
