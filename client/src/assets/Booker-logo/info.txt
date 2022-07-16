@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: HKGrotesk-Bold
+font link: https://hanken.co/product/hk-grotesk/
+font author: Hanken Design Co.
+font author site: https://hanken.co/
+Slogan Font: WorkSans-Light.ttf
+
+icon designer: Madebyelvis
+icon designer link: /Madebyelvis
+        
+{"bg":"#E87D22","icon":"#762A0C","font":"#ffffff","slogan":"#ffffff"}
+      
