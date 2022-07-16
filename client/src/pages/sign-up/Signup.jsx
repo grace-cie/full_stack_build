@@ -5,7 +5,7 @@ import './sign-up.css'
 const Signup = ({title}) => {
   return (
     <div className='container'>
-      <div className='panel panel-default'>
+      <div className='panel-body'>
         <div className="panel-heading">
           <h3 className='panel-title'>{title}</h3>
         </div>
