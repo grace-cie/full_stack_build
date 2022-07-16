@@ -20,7 +20,7 @@ const Login = ({ title }) => {
     <div className=''>
       <div className='container'>
           <div className=''>
-            <div className='login-panel panel panel-default'>
+            <div className='panel-body'>
               <div className="panel-heading">
                 <h3 className='panel-title'>{title}</h3>
               </div>
