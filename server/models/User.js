@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema(
   {
@@ -24,6 +24,12 @@ const UserSchema = new mongoose.Schema(
     cpassword: {
       type: String,
       required: true,
+    },
+    borrowedBooks: {
+      type: [String],
+    },
+    bookedDate: {
+      type: Date,
     },
     isAdmin: {
       type: Boolean,
