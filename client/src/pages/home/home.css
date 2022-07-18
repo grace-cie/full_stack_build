@@ -1,15 +1,22 @@
 #nav-items {
-     position: absolute;
-     right: 176px;
-     margin-top: -15px;
-     font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  right: 176px;
+  margin-top: -15px;
+  font-family: 'Open Sans', sans-serif;
 }
 .nav-link {
-     color: #FFF !important;
+  color: #fff !important;
 }
 .logo {
-     height: 50px;
+  height: 50px;
 }
 .navbar {
-     background-color: #e87d22 !important;
+  background-color: #e87d22 !important;
+}
+
+.users-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
