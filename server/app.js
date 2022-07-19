@@ -2,10 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
-import cors from 'cors'
+import cors from 'cors';
 
 import authRoute from './routes/auth.js';
 import usersRoute from './routes/users.js';
+import bookRoute from './routes/booksRoutes.js';
+import authorRoute from './routes/authorRoutes.js';
+import reviewRoute from './routes/reviewRoutes.js';
 
 const app = express();
 dotenv.config();
@@ -21,13 +24,16 @@ const connect = async () => {
 };
 
 //middlewares
-app.use(cors())
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json()); // para ma send ang json file sa postMan nig request 😊
 
 //routes
 app.use('/server/auth', authRoute);
 app.use('/server/users', usersRoute);
+app.use('/server/book', bookRoute);
+app.use('/server/author', authorRoute);
+app.use('/server/review', reviewRoute);
 
 mongoose.connection.on('error', (err) => {
   console.log(err);
