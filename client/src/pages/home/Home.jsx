@@ -6,10 +6,11 @@ import './home.css';
 import image from '../../assets/default2.png';
 import axios from 'axios';
 import UsersTable from '../../components/table/UsersTable';
+import Books from '../../components/books/Books';
 
 const Home = () => {
   const [users, setUser] = useState([]);
-
+  const [books, setBooks] = useState([]);
   useEffect(() => {
     const fetchUsers = async () => {
       const getUser = await axios.get('http://localhost:8000/server/users');
@@ -17,6 +18,15 @@ const Home = () => {
       setUser(getUser.data);
     };
     fetchUsers();
+  }, []);
+
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      const getBook = await axios.get('http://localhost:8000/server/book');
+
+      setBooks(getBook.data);
+    };
+    fetchAllBooks();
   }, []);
 
   return (
@@ -42,9 +52,11 @@ const Home = () => {
           </ul>
         </div>
       </nav>
-      <div className='users-container'>
-        hello
+      {/* <div className='users-container'>
         <UsersTable users={users} />
+      </div> */}
+      <div className='book-container'>
+        <Books books={books} />
       </div>
     </div>
 
