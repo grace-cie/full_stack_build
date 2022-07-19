@@ -1,7 +1,6 @@
 #nav-items {
-  position: absolute;
-  right: 176px;
-  margin-top: -15px;
+  position: relative;
+  left: 1500px;
   font-family: 'Open Sans', sans-serif;
 }
 .nav-link {
