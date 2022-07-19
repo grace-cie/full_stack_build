@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './books.css';
 
-const Books = ({ books }) => {
+import Header from '../Header';
+
+import axios from 'axios';
+
+const Books = ({ title }) => {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      const getBook = await axios.get('http://localhost:8000/server/book');
+
+      setBooks(getBook.data);
+    };
+    fetchAllBooks();
+  }, []);
   return (
     <div>
+      <Header />
+      <div>
+        <h1>{title}</h1>
+      </div>
       {books.map((book) => (
         <div key={book._id}>
           {/* <p>{book.authorId}</p> */}

@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import {
+  authFailure,
+  authStart,
+  authSuccess,
+} from '../../redux/auth/authSlice';
 
 const Login = ({ title }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const res = await axios.post('http://localhost:8000/server/auth/login', {
-      username,
-      password,
-    });
-    console.log(res.data);
+    dispatch(authStart());
+    try {
+      const response = await axios.post(
+        'http://localhost:8000/server/auth/login',
+        {
+          username,
+          password,
+        }
+      );
+      dispatch(authSuccess(response.data));
+      navigate('/');
+    } catch (err) {
+      dispatch(authFailure());
+    }
   };
   return (
     <div className=''>
